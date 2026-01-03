@@ -16,6 +16,7 @@ const AdminDashboard = () => {
   const [address, setAddress] = useState("");
   const [type, setType] = useState(types[0]);
   const [parking, setParking] = useState(false);
+  const [search, setSearch] = useState("");
 
   const addRestaurant = () => {
     if (!name || !address) return alert("Enter name & address");
@@ -36,9 +37,18 @@ const AdminDashboard = () => {
     setParking(false);
   };
 
+  // Filter restaurants based on search input (name or type)
+  const filteredRestaurants = restaurants.filter(
+    (r) =>
+      r.name.toLowerCase().includes(search.toLowerCase()) ||
+      r.type.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div style={{ padding: "20px" }}>
       <h2>Admin Dashboard</h2>
+
+      {/* Add restaurant form */}
       <input
         placeholder="Restaurant Name"
         value={name}
@@ -64,8 +74,18 @@ const AdminDashboard = () => {
       </label>
       <button onClick={addRestaurant}>Add Restaurant</button>
 
+      {/* Search bar */}
+      <div style={{ marginTop: "20px" }}>
+        <input
+          placeholder="Search by name or type"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+
+      {/* Restaurant list */}
       <div style={{ display: "flex", flexWrap: "wrap", marginTop: "20px" }}>
-        {restaurants.map((r) => (
+        {filteredRestaurants.map((r) => (
           <div key={r.id} style={{ border: "1px solid gray", margin: "10px", padding: "10px", width: "250px" }}>
             <img src={r.image} alt={r.name} width="100%" height="150px" />
             <h4>{r.name}</h4>

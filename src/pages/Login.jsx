@@ -42,8 +42,7 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </form>
-      <p>Admin: admin@gmail.com / admin1234</p>
-      <p>Customer: customer@gmail.com / customer1234</p>
+      
     </div>
   );
 };
