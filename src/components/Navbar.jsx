@@ -1,11 +1,11 @@
-// src/components/Navbar.jsx (or wherever your search input is)
+
 import { useRef, useEffect } from "react";
 
 const Navbar = ({ search, setSearch }) => {
   const searchRef = useRef(null);
 
   useEffect(() => {
-    searchRef.current.focus(); // Auto-focus search input
+    searchRef.current.focus(); 
   }, []);
 
   return (
@@ -15,7 +15,7 @@ const Navbar = ({ search, setSearch }) => {
         placeholder="Search by name or address"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        ref={searchRef} // attach ref
+        ref={searchRef} 
       />
     </div>
   );

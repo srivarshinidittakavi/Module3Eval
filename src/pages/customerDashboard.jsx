@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-// Dummy restaurant data (should match what admin added)
+
 const restaurants = [
   {
     id: 1,
@@ -33,7 +33,7 @@ const CustomerDashboard = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
 
   useEffect(() => {
-    // Filter restaurants based on search
+    
     const filtered = restaurants.filter((rest) =>
       rest.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       rest.type.toLowerCase().includes(searchTerm.toLowerCase())
@@ -82,5 +82,4 @@ const CustomerDashboard = () => {
     </div>
   );
 };
-
 export default CustomerDashboard;

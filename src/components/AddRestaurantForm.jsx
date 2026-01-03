@@ -1,4 +1,4 @@
-// src/components/AddRestaurantForm.jsx
+
 import { useState } from "react";
 
 const AddRestaurantForm = ({ onAdd }) => {
@@ -20,7 +20,7 @@ const AddRestaurantForm = ({ onAdd }) => {
       image
     };
     onAdd(restaurant);
-    setName(""); setAddress(""); // clear form
+    setName(""); setAddress(""); 
   };
 
   return (

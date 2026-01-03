@@ -1,4 +1,4 @@
-// src/components/RestaurantCard.jsx
+
 import { useNavigate } from "react-router-dom";
 
 const RestaurantCard = ({ data, admin, onDelete }) => {

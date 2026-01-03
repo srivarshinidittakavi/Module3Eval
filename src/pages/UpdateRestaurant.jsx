@@ -1,12 +1,12 @@
-// src/pages/UpdateRestaurant.jsx
+
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const UpdateRestaurant = () => {
-  const { id } = useParams(); // Get restaurantID from URL
+  const { id } = useParams(); 
   const navigate = useNavigate();
 
-  // State for restaurants from localStorage
+  
   const [restaurants, setRestaurants] = useState([]);
   const [restaurantName, setRestaurantName] = useState("");
   const [address, setAddress] = useState("");
@@ -20,7 +20,6 @@ const UpdateRestaurant = () => {
     const data = JSON.parse(localStorage.getItem("evalData")) || [];
     setRestaurants(data);
 
-    // Find restaurant to update
     const restaurantToEdit = data.find(
       (r) => r.restaurantID === parseInt(id)
     );
@@ -64,7 +63,7 @@ const UpdateRestaurant = () => {
 
     localStorage.setItem("evalData", JSON.stringify(updatedRestaurants));
     alert("Restaurant updated successfully!");
-    navigate("/admin/dashboard"); // Redirect back to admin dashboard
+    navigate("/admin/dashboard"); 
   };
 
   return (

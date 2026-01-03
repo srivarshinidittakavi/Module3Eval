@@ -37,7 +37,7 @@ const AdminDashboard = () => {
     setParking(false);
   };
 
-  // Filter restaurants based on search input (name or type)
+  
   const filteredRestaurants = restaurants.filter(
     (r) =>
       r.name.toLowerCase().includes(search.toLowerCase()) ||

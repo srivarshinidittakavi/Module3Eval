@@ -1,4 +1,4 @@
-// src/pages/Login.jsx
+
 import React, { useState, useContext, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
@@ -11,7 +11,7 @@ const Login = () => {
   const inputRef = useRef();
 
   useEffect(() => {
-    inputRef.current.focus(); // autofocus input
+    inputRef.current.focus(); 
   }, []);
 
   const handleLogin = (e) => {
